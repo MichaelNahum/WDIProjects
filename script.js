@@ -1,3 +1,5 @@
+// put this in an object so there are not so many global variables!
+
 var deck = []
 var computerHand = []
 var playerHand = []
@@ -38,7 +40,7 @@ function splitDeck() {
 }
 
 function setCardDisplay(id, card) {
-  document.querySelector(id).innerHTML = card.rank + " of " + card.suit;
+  document.querySelector(id).innerHTML = card.rank + " of " + card.suit; //unnecessary
   document.querySelector(id).innerHTML = '<img class="card" src="CardFolder/' + card.rank + '_of_' + card.suit +  '.png" />'
 }
 
@@ -65,7 +67,7 @@ function duelCards(playerHand, computerHand) {
 
     if (playerNum < computerNum) {
       winningHand = computerHand;
-      console.log("You worthless piece of feral dung.");
+      console.log("You worthless piece of feral dung."); // could display this on the page!
     }
     else if (playerNum > computerNum) {
       winningHand = playerHand;
@@ -83,7 +85,7 @@ function duelCards(playerHand, computerHand) {
 }
 
 ScoreButton.addEventListener("click", function() {
-  alert("Your score stands at " + playerHand.length + ". While your opponent's score stands at " + computerHand.length + ".")
+  alert("Your score stands at " + playerHand.length + ". While your opponent's score stands at " + computerHand.length + ".") // should make this display
 })
 
 
@@ -107,57 +109,57 @@ splitDeck(deck);
 //   }
 // }
 
-  // StartButton.addEventListener("click", function() {
-  //  var myCard = playerHand[0].cardNum
-  //  var theirCard = computerHand[0].cardNum
-  //  document.querySelector("#MyCard").innerHTML = playerHand[0].rank + " of " + playerHand[0].suit
-  //  document.querySelector("#CompCard").innerHTML = computerHand[0].rank + " of " + computerHand[0].suit
-  //  if (myCard < theirCard) {
-  //    var shifted = playerHand.shift();
-  //    computerHand.push(shifted);
-  //    var shifted2 = computerHand.shift();
-  //    computerHand.push(shifted2);
-  //    console.log("You worthless piece of feral dung.")
-  //  }
-  //  else if (myCard > theirCard) {
-  //     var shifted = computerHand.shift();
-  //     playerHand.push(shifted);
-  //     var shifted2 = playerHand.shift();
-  //     playerHand.push(shifted2);
-  //     console.log("You magnificent bastard!")
-  //   }
-  //   else {
-  //     tieBreaker()
-  //   }
-  // });
-  //
-  // function tieBreaker() {
-  //     alert("War!")
-  //     var cardA = playerHand[1].cardNum
-  //     var cardB = computerHand[1].cardNum
-  //     document.querySelector("#MyCard").innerHTML = playerHand[1].rank + " of " + playerHand[1].suit
-  //     document.querySelector("#CompCard").innerHTML = computerHand[1].rank + " of " + computerHand[1].suit
-  //     if (cardA < cardB) {
-  //       var shifted = computerHand.shift();
-  //       var shifted2 = playerHand.shift();
-  //       computerHand.push(shifted)
-  //       computerHand.push(shifted2)
-  //       var shifted = computerHand.shift();
-  //       var shifted2 = playerHand.shift();
-  //       computerHand.push(shifted)
-  //       computerHand.push(shifted2)
-  //       console.log("You worthless piece of shit.")
-  //     }
-  //     else if (cardA > cardB) {
-  //       var shifted = computerHand.shift();
-  //       var shifted2 = playerHand.shift();
-  //       playerHand.push(shifted);
-  //       playerHand.push(shifted2);
-  //       var shifted = computerHand.shift();
-  //       var shifted2 = playerHand.shift();
-  //       playerHand.push(shifted);
-  //       playerHand.push(shifted2);
-  //       console.log("You magnificent bastard!")
-  //
-  //   };
-  // }
+// StartButton.addEventListener("click", function() {
+//  var myCard = playerHand[0].cardNum
+//  var theirCard = computerHand[0].cardNum
+//  document.querySelector("#MyCard").innerHTML = playerHand[0].rank + " of " + playerHand[0].suit
+//  document.querySelector("#CompCard").innerHTML = computerHand[0].rank + " of " + computerHand[0].suit
+//  if (myCard < theirCard) {
+//    var shifted = playerHand.shift();
+//    computerHand.push(shifted);
+//    var shifted2 = computerHand.shift();
+//    computerHand.push(shifted2);
+//    console.log("You worthless piece of feral dung.")
+//  }
+//  else if (myCard > theirCard) {
+//     var shifted = computerHand.shift();
+//     playerHand.push(shifted);
+//     var shifted2 = playerHand.shift();
+//     playerHand.push(shifted2);
+//     console.log("You magnificent bastard!")
+//   }
+//   else {
+//     tieBreaker()
+//   }
+// });
+//
+// function tieBreaker() {
+//     alert("War!")
+//     var cardA = playerHand[1].cardNum
+//     var cardB = computerHand[1].cardNum
+//     document.querySelector("#MyCard").innerHTML = playerHand[1].rank + " of " + playerHand[1].suit
+//     document.querySelector("#CompCard").innerHTML = computerHand[1].rank + " of " + computerHand[1].suit
+//     if (cardA < cardB) {
+//       var shifted = computerHand.shift();
+//       var shifted2 = playerHand.shift();
+//       computerHand.push(shifted)
+//       computerHand.push(shifted2)
+//       var shifted = computerHand.shift();
+//       var shifted2 = playerHand.shift();
+//       computerHand.push(shifted)
+//       computerHand.push(shifted2)
+//       console.log("You worthless piece of shit.")
+//     }
+//     else if (cardA > cardB) {
+//       var shifted = computerHand.shift();
+//       var shifted2 = playerHand.shift();
+//       playerHand.push(shifted);
+//       playerHand.push(shifted2);
+//       var shifted = computerHand.shift();
+//       var shifted2 = playerHand.shift();
+//       playerHand.push(shifted);
+//       playerHand.push(shifted2);
+//       console.log("You magnificent bastard!")
+//
+//   };
+// }
